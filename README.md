@@ -1,4 +1,4 @@
-# stock query
+# Inquiry
 实时股票查询，JavaFX
 
 ## 效果
