@@ -27,13 +27,15 @@ public class SetTableColumn {
     private StringProperty date;//日期
     private StringProperty time;//时间
 
-    public SetTableColumn(){}
+    public SetTableColumn() {
+    }
+
     public SetTableColumn(String name, String open, String lastClose, String price,
                           String todayHigh, String todayLow,
                           String competeToBuy, String competeToSell,
                           String count, String total,
                           String buyApply_1_, String buyPrice_1_, String sellApply_1_, String sellPrice_1_,
-                          String date, String time){
+                          String date, String time) {
         this.name = new SimpleStringProperty(name);
         this.open = new SimpleStringProperty(open);
         this.close = new SimpleStringProperty(lastClose);
@@ -57,163 +59,195 @@ public class SetTableColumn {
         this.time = new SimpleStringProperty(time);
     }
 
-    public String getName(){
+    public String getName() {
         return name.get();
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name.set(name);
     }
-    public StringProperty nameProperty(){
+
+    public StringProperty nameProperty() {
         return name;
     }
 
-    public String getOpen(){
+    public String getOpen() {
         return open.get();
     }
-    public void setOpen(String open){
+
+    public void setOpen(String open) {
         this.open.set(open);
     }
-    public StringProperty openProperty(){
+
+    public StringProperty openProperty() {
         return open;
     }
 
-    public String getLastClose(){
+    public String getLastClose() {
         return close.get();
-    }
-    public void setLastClose(String lastClose){
-        this.close.set(lastClose);
-    }
-    public  StringProperty lastCloseProperty(){
-        return  close;
     }
 
-    public String getPrice(){
+    public void setLastClose(String lastClose) {
+        this.close.set(lastClose);
+    }
+
+    public StringProperty lastCloseProperty() {
+        return close;
+    }
+
+    public String getPrice() {
         return close.get();
     }
-    public void setPrice(String price){
+
+    public void setPrice(String price) {
         this.price.set(price);
     }
-    public StringProperty priceProperty(){
+
+    public StringProperty priceProperty() {
         return price;
     }
 
-    public String getTodayHigh(){
+    public String getTodayHigh() {
         return todayHigh.get();
     }
-    public void setTodayHigh(String todayHigh){
+
+    public void setTodayHigh(String todayHigh) {
         this.todayHigh.set(todayHigh);
     }
-    public StringProperty todayHighProperty(){
+
+    public StringProperty todayHighProperty() {
         return todayHigh;
     }
 
-    public String getTodayLow(){
+    public String getTodayLow() {
         return todayLow.get();
     }
-    public void setTodayLow(String todayLow){
+
+    public void setTodayLow(String todayLow) {
         this.todayLow.set(todayLow);
     }
-    public StringProperty todayLowProperty(){
+
+    public StringProperty todayLowProperty() {
         return todayLow;
     }
 
-    public String getCompeteToBuy(){
+    public String getCompeteToBuy() {
         return competeToBuy.get();
     }
-    public void getCompeteToBuy(String count){
+
+    public void getCompeteToBuy(String count) {
         this.competeToBuy.set(count);
     }
-    public StringProperty competeToBuyProperty(){
+
+    public StringProperty competeToBuyProperty() {
         return competeToBuy;
     }
 
-    public String getCompeteToSell(){
+    public String getCompeteToSell() {
         return competeToSell.get();
     }
-    public void setCompeteToSell(String count){
+
+    public void setCompeteToSell(String count) {
         this.competeToSell.set(count);
     }
-    public StringProperty competeToSellProperty(){
+
+    public StringProperty competeToSellProperty() {
         return competeToSell;
     }
 
-    public String getCount(){
+    public String getCount() {
         return count.get();
     }
-    public void setCount(String count){
+
+    public void setCount(String count) {
         this.count.set(count);
     }
-    public StringProperty countProperty(){
+
+    public StringProperty countProperty() {
         return count;
     }
 
-    public String getTotal(){
+    public String getTotal() {
         return total.get();
     }
-    public void setTotal(String total){
+
+    public void setTotal(String total) {
         this.total.set(total);
     }
-    public StringProperty totalProperty(){
+
+    public StringProperty totalProperty() {
         return total;
     }
 
-    public String getBuyApply_1_(){
+    public String getBuyApply_1_() {
         return buyApply_1_.get();
     }
-    public void setBuyApply_1_(String total){
+
+    public void setBuyApply_1_(String total) {
         this.buyApply_1_.set(total);
     }
-    public StringProperty buyApply_1_Property(){
+
+    public StringProperty buyApply_1_Property() {
         return buyApply_1_;
     }
 
-    public String geBuyPrice_1_Col(){
+    public String geBuyPrice_1_Col() {
         return buyPrice_1_.get();
     }
-    public void setBuyPrice_1_Col(String total){
+
+    public void setBuyPrice_1_Col(String total) {
         this.buyPrice_1_.set(total);
     }
-    public StringProperty buyPrice_1_Property(){
+
+    public StringProperty buyPrice_1_Property() {
         return buyPrice_1_;
     }
 
-    public String getSellApply_1_(){
+    public String getSellApply_1_() {
         return sellApply_1_.get();
     }
-    public void setSellApply_1_(String total){
+
+    public void setSellApply_1_(String total) {
         this.sellApply_1_.set(total);
     }
-    public StringProperty sellApply_1_Property(){
+
+    public StringProperty sellApply_1_Property() {
         return sellApply_1_;
     }
 
-    public String getSellPrice_1_(){
+    public String getSellPrice_1_() {
         return sellPrice_1_.get();
     }
-    public void setSellPrice_1_(String total){
+
+    public void setSellPrice_1_(String total) {
         this.sellPrice_1_.set(total);
     }
-    public StringProperty sellPrice_1_Property(){
+
+    public StringProperty sellPrice_1_Property() {
         return sellPrice_1_;
     }
 
-    public String getDate(){
+    public String getDate() {
         return date.get();
     }
-    public void setDate(String date){
+
+    public void setDate(String date) {
         this.date.set(date);
     }
-    public StringProperty dateProperty(){
+
+    public StringProperty dateProperty() {
         return date;
     }
 
-    public String getTime(){
+    public String getTime() {
         return time.get();
     }
-    public void setTime(String time){
+
+    public void setTime(String time) {
         this.date.set(time);
     }
-    public StringProperty timeProperty(){
+
+    public StringProperty timeProperty() {
         return time;
     }
 }

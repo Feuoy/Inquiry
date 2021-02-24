@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("indexView.fxml"));
         primaryStage.setTitle("实时股票查询");
         primaryStage.setScene(new Scene(root, 900, 700));

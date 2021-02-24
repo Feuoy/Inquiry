@@ -25,9 +25,9 @@ public class IndexViewController {
     private SetImage image_0 = new SetImage();
 
     @FXML
-    public  TextField seekData_Fld;
+    public TextField seekData_Fld;
     @FXML
-    public  TextField seekImage_Fld;
+    public TextField seekImage_Fld;
     @FXML
     public Pane showImage_Pane;
     @FXML
@@ -36,44 +36,44 @@ public class IndexViewController {
     @FXML
     private TableView<SetTableColumn> data_TableView;
     @FXML
-    private TableColumn<SetTableColumn,String> nameCol;
+    private TableColumn<SetTableColumn, String> nameCol;
     @FXML
-    private TableColumn<SetTableColumn,String> openCol;
+    private TableColumn<SetTableColumn, String> openCol;
     @FXML
-    private TableColumn<SetTableColumn,String> lastCloseCol;
+    private TableColumn<SetTableColumn, String> lastCloseCol;
     @FXML
-    private TableColumn<SetTableColumn,String> priceCol;
+    private TableColumn<SetTableColumn, String> priceCol;
     @FXML
-    private TableColumn<SetTableColumn,String> todayHighCol;
+    private TableColumn<SetTableColumn, String> todayHighCol;
     @FXML
-    private TableColumn<SetTableColumn,String> todayLowCol;
+    private TableColumn<SetTableColumn, String> todayLowCol;
 
     @FXML
-    private TableColumn<SetTableColumn,String> competeToBuyCol;
+    private TableColumn<SetTableColumn, String> competeToBuyCol;
     @FXML
-    private TableColumn<SetTableColumn,String> competeToSellCol;
+    private TableColumn<SetTableColumn, String> competeToSellCol;
 
     @FXML
-    private TableColumn<SetTableColumn,String> countCol;
+    private TableColumn<SetTableColumn, String> countCol;
     @FXML
-    private TableColumn<SetTableColumn,String> totalCol;
+    private TableColumn<SetTableColumn, String> totalCol;
 
     @FXML
-    private TableColumn<SetTableColumn,String> buyApply_1_Col;
+    private TableColumn<SetTableColumn, String> buyApply_1_Col;
     @FXML
-    private TableColumn<SetTableColumn,String> buyPrice_1_Col;
+    private TableColumn<SetTableColumn, String> buyPrice_1_Col;
     @FXML
-    private TableColumn<SetTableColumn,String> sellApply_1_Col;
+    private TableColumn<SetTableColumn, String> sellApply_1_Col;
     @FXML
-    private TableColumn<SetTableColumn,String> sellPrice_1_Col;
+    private TableColumn<SetTableColumn, String> sellPrice_1_Col;
 
     @FXML
-    private TableColumn<SetTableColumn,String> dateCol;
+    private TableColumn<SetTableColumn, String> dateCol;
     @FXML
-    private TableColumn<SetTableColumn,String> timeCol;
+    private TableColumn<SetTableColumn, String> timeCol;
 
     @FXML
-    private void inputTableColumn(){
+    private void inputTableColumn() {
         nameCol.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         openCol.setCellValueFactory(cellData -> cellData.getValue().openProperty());
         lastCloseCol.setCellValueFactory(cellData -> cellData.getValue().lastCloseProperty());
@@ -98,18 +98,19 @@ public class IndexViewController {
 
 
     //加入添加数据到tableView
-    public void addTableView(ProcessData data){
+    public void addTableView(ProcessData data) {
         data_TableView.setItems(data.getTableColumnData());
     }
 
 
     //警告窗口
-    public void warn(Stage warningStage) throws Exception{
+    public void warn(Stage warningStage) throws Exception {
         Parent root2 = FXMLLoader.load(getClass().getResource("../view/warnView.fxml"));
         warningStage.setTitle("Warning");
         warningStage.setScene(new Scene(root2, 280, 120));
         warningStage.show();
     }
+
     public void warnWindows() {
         Stage warningStage = new Stage();
         try {
@@ -118,10 +119,12 @@ public class IndexViewController {
             e1.printStackTrace();
         }
     }
+
     public void warning_Btn(Event event) {
         TryAgainClass eventAgain = new TryAgainClass();
         warning_Btn.setOnAction(eventAgain);
     }
+
     class TryAgainClass implements EventHandler<ActionEvent> {
         public void handle(ActionEvent e) {
             Stage stage = (Stage) warning_Btn.getScene().getWindow();
@@ -131,7 +134,7 @@ public class IndexViewController {
 
 
     //seekData_Btn按钮事件，有bug
-    public void seekData_Btn(Event event){
+    public void seekData_Btn(Event event) {
         Timer timer = new Timer();
 
         if (seekData_Fld.getText().length() >= 6) {
@@ -140,28 +143,26 @@ public class IndexViewController {
                 public void run() {
 
                     ProcessData data = new ProcessData(seekData_Fld.getText());
-                    if(seekData_Fld.getText().length() >= 6){
+                    if (seekData_Fld.getText().length() >= 6) {
 
-                        if(data.getNoData() == true){
+                        if (data.getNoData() == true) {
                             warnWindows();
                             seekData_Fld.setText("");
                             data.setNoData();
 
                             timer.cancel();
-                        }
-                        else{
+                        } else {
                             inputTableColumn();
                             addTableView(data);
 
-                            if (seekData_Fld.getText().length() >= 6 && seekData_Fld.getText().length() != 0){
-                                seekImage_Fld.setText(seekData_Fld.getText().substring(0,6));
+                            if (seekData_Fld.getText().length() >= 6 && seekData_Fld.getText().length() != 0) {
+                                seekImage_Fld.setText(seekData_Fld.getText().substring(0, 6));
                             }
                         }
                     }
                 }
-            },0,2000);
-        }
-        else {
+            }, 0, 2000);
+        } else {
             warnWindows();
         }
     }
@@ -174,8 +175,7 @@ public class IndexViewController {
             image_0.showImageView();
             showImage_Pane.getChildren().add(image_0.getImageView());
             isClick = true;
-        }
-        else {
+        } else {
             image_0.setCode("http://image.sinajs.cn/newchart/min/n/sh" + seekImage_Fld.getText() + ".gif");
             image_0.changeImageView();
         }
@@ -183,20 +183,23 @@ public class IndexViewController {
 
 
     //分时线
-    public void min_Btn(Event event){
+    public void min_Btn(Event event) {
         image_0.setCode("http://image.sinajs.cn/newchart/min/n/sh" + seekImage_Fld.getText() + ".gif");
         image_0.changeImageView();
     }
+
     //日K线
-    public void daily_Btn(Event event){
+    public void daily_Btn(Event event) {
         image_0.setCode("http://image.sinajs.cn/newchart/daily/n/sh" + seekImage_Fld.getText() + ".gif");
         image_0.changeImageView();
     }
+
     //周K线
-    public void weekly_Btn(Event event){
+    public void weekly_Btn(Event event) {
         image_0.setCode("http://image.sinajs.cn/newchart/weekly/n/sh" + seekImage_Fld.getText() + ".gif");
         image_0.changeImageView();
     }
+
     //月K线
     public void monthly_Btn(Event event) {
         image_0.setCode("http://image.sinajs.cn/newchart/monthly/n/sh" + seekImage_Fld.getText() + ".gif");
